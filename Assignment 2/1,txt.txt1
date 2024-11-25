@@ -1,0 +1,201 @@
+package Registration;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Registration extends JFrame implements ActionListener {
+    JTextField textFirstName, textLastName, textAge, textCourse, textSkills, textFatherName, textFatherIncome, textMotherName, textContact;
+    JRadioButton rMale, rFemale;
+    JComboBox<String> comboLanguage;
+    JButton submitButton, resetButton;
+
+    public Registration() {
+        super("Student Registration Form");
+
+        // Set the background color to light pink
+        getContentPane().setBackground(new Color(255, 182, 193));  // Light pink color
+
+        // Header Label (centered)
+        JLabel header = new JLabel("Student Registration Form");
+        header.setFont(new Font("Arial", Font.BOLD, 24));
+        header.setBounds(150, 10, 400, 30);  // Position adjusted to be centered
+        add(header);
+
+        // First Name
+        JLabel labelFirstName = new JLabel("First Name:");
+        labelFirstName.setFont(new Font("Arial", Font.PLAIN, 18));
+        labelFirstName.setBounds(50, 60, 150, 30);
+        add(labelFirstName);
+
+        textFirstName = new JTextField();
+        textFirstName.setFont(new Font("Arial", Font.PLAIN, 16));
+        textFirstName.setBounds(200, 60, 200, 30);
+        add(textFirstName);
+
+        // Last Name
+        JLabel labelLastName = new JLabel("Last Name:");
+        labelLastName.setFont(new Font("Arial", Font.PLAIN, 18));
+        labelLastName.setBounds(50, 100, 150, 30);
+        add(labelLastName);
+
+        textLastName = new JTextField();
+        textLastName.setFont(new Font("Arial", Font.PLAIN, 16));
+        textLastName.setBounds(200, 100, 200, 30);
+        add(textLastName);
+
+        // Age
+        JLabel labelAge = new JLabel("Age:");
+        labelAge.setFont(new Font("Arial", Font.PLAIN, 18));
+        labelAge.setBounds(50, 140, 150, 30);
+        add(labelAge);
+
+        textAge = new JTextField();
+        textAge.setFont(new Font("Arial", Font.PLAIN, 16));
+        textAge.setBounds(200, 140, 200, 30);
+        add(textAge);
+
+        // Gender
+        JLabel labelGender = new JLabel("Gender:");
+        labelGender.setFont(new Font("Arial", Font.PLAIN, 18));
+        labelGender.setBounds(50, 180, 150, 30);
+        add(labelGender);
+
+        rMale = new JRadioButton("Male");
+        rMale.setFont(new Font("Arial", Font.PLAIN, 16));
+        rMale.setBounds(200, 180, 80, 30);
+        rMale.setBackground(new Color(255, 182, 193));  // Light pink background
+        add(rMale);
+
+        rFemale = new JRadioButton("Female");
+        rFemale.setFont(new Font("Arial", Font.PLAIN, 16));
+        rFemale.setBounds(300, 180, 100, 30);
+        rFemale.setBackground(new Color(255, 182, 193));  // Light pink background
+        add(rFemale);
+
+        ButtonGroup genderGroup = new ButtonGroup();
+        genderGroup.add(rMale);
+        genderGroup.add(rFemale);
+
+        // Course
+        JLabel labelCourse = new JLabel("Course:");
+        labelCourse.setFont(new Font("Arial", Font.PLAIN, 18));
+        labelCourse.setBounds(50, 220, 150, 30);
+        add(labelCourse);
+
+        textCourse = new JTextField();
+        textCourse.setFont(new Font("Arial", Font.PLAIN, 16));
+        textCourse.setBounds(200, 220, 200, 30);
+        add(textCourse);
+
+        // Language
+        JLabel labelLanguage = new JLabel("Language:");
+        labelLanguage.setFont(new Font("Arial", Font.PLAIN, 18));
+        labelLanguage.setBounds(50, 260, 150, 30);
+        add(labelLanguage);
+
+        comboLanguage = new JComboBox<>(new String[]{"English", "Hindi", "Other"});
+        comboLanguage.setFont(new Font("Arial", Font.PLAIN, 16));
+        comboLanguage.setBounds(200, 260, 200, 30);
+        add(comboLanguage);
+
+        // Skills
+        JLabel labelSkills = new JLabel("Skills:");
+        labelSkills.setFont(new Font("Arial", Font.PLAIN, 18));
+        labelSkills.setBounds(50, 300, 150, 30);
+        add(labelSkills);
+
+        textSkills = new JTextField();
+        textSkills.setFont(new Font("Arial", Font.PLAIN, 16));
+        textSkills.setBounds(200, 300, 200, 30);
+        add(textSkills);
+
+        // Contact Name
+        JLabel labelContact = new JLabel("Contact Name:");
+        labelContact.setFont(new Font("Arial", Font.PLAIN, 18));
+        labelContact.setBounds(50, 340, 150, 30);
+        add(labelContact);
+
+        textContact = new JTextField();
+        textContact.setFont(new Font("Arial", Font.PLAIN, 16));
+        textContact.setBounds(200, 340, 200, 30);
+        add(textContact);
+
+        // Father's Name
+        JLabel labelFatherName = new JLabel("Father's Name:");
+        labelFatherName.setFont(new Font("Arial", Font.PLAIN, 18));
+        labelFatherName.setBounds(50, 380, 150, 30);
+        add(labelFatherName);
+
+        textFatherName = new JTextField();
+        textFatherName.setFont(new Font("Arial", Font.PLAIN, 16));
+        textFatherName.setBounds(200, 380, 200, 30);
+        add(textFatherName);
+
+        // Father's Income
+        JLabel labelFatherIncome = new JLabel("Father's Income:");
+        labelFatherIncome.setFont(new Font("Arial", Font.PLAIN, 18));
+        labelFatherIncome.setBounds(50, 420, 200, 30);
+        add(labelFatherIncome);
+
+        textFatherIncome = new JTextField();
+        textFatherIncome.setFont(new Font("Arial", Font.PLAIN, 16));
+        textFatherIncome.setBounds(200, 420, 200, 30);
+        add(textFatherIncome);
+
+        // Mother's Name
+        JLabel labelMotherName = new JLabel("Mother's Name:");
+        labelMotherName.setFont(new Font("Arial", Font.PLAIN, 18));
+        labelMotherName.setBounds(50, 460, 150, 30);
+        add(labelMotherName);
+
+        textMotherName = new JTextField();
+        textMotherName.setFont(new Font("Arial", Font.PLAIN, 16));
+        textMotherName.setBounds(200, 460, 200, 30);
+        add(textMotherName);
+
+        // Buttons (centered)
+        submitButton = new JButton("Submit");
+        submitButton.setFont(new Font("Arial", Font.BOLD, 16));
+        submitButton.setBounds(150, 510, 100, 30);  // Centered horizontally
+        submitButton.addActionListener(this);
+        add(submitButton);
+
+        resetButton = new JButton("Reset");
+        resetButton.setFont(new Font("Arial", Font.BOLD, 16));
+        resetButton.setBounds(300, 510, 100, 30);  // Centered horizontally
+        resetButton.addActionListener(this);
+        add(resetButton);
+
+        // Frame Settings
+        setLayout(null);
+        setSize(600, 600);  // Adjusted frame height
+        setLocationRelativeTo(null);  // Centers the window on the screen
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == submitButton) {
+            // Validate and collect data
+            JOptionPane.showMessageDialog(this, "Form Submitted Successfully!");
+        } else if (e.getSource() == resetButton) {
+            // Reset all fields
+            textFirstName.setText("");
+            textLastName.setText("");
+            textAge.setText("");
+            textCourse.setText("");
+            textSkills.setText("");
+            textContact.setText("");
+            textFatherName.setText("");
+            textFatherIncome.setText("");
+            textMotherName.setText("");
+        }
+    }
+
+    public static void main(String[] args) {
+        new Registration();
+    }
+}
